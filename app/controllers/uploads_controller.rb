@@ -11,17 +11,22 @@ class UploadsController < ApplicationController
   # GET /uploads/1
   # GET /uploads/1.json
   def show
-    #download_file
+    if upload_exists?(params[:id])
+      @upload = Upload.find(params[:id])
+      send_file @upload.uri
+      `open #{@upload.uri}`
+    else
+      render :error
+    end
   end
 
-  # POST /uploadsUploadbefore_action :authenticate_user!
+  # POST /uploads
   # POST /uploads.json
   def create
     file_name = params[:upload][:image]
     @incoming_file = params[:upload][:binary]
-    uri = "#{Rails.root}/uploads/#{file_name}"
+    uri = "#{Rails.root}/uploads/#{current_user.id}-#{file_name}"
     FileUtils.mv @incoming_file, uri
-
 
     @upload = Upload.new(user_id: current_user.id, filename: file_name, uri: uri)
 
@@ -45,15 +50,18 @@ class UploadsController < ApplicationController
   # DELETE /uploads/1
   # DELETE /uploads/1.json
   def destroy
-    @upload.destroy
-  end
-
-  def download_file
-    send_file @upload.image.url
-    `open #{@upload.image.url}`
+    if upload_exists?(params[:id])
+      @upload.destroy
+    else
+      render :error
+    end
   end
 
   private
+
+  def upload_exists?(id)
+    Upload.exists?(id: id)
+  end
 
   def set_upload
     @upload = Upload.find(params[:id])

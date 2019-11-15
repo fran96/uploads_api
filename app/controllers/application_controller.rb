@@ -23,8 +23,4 @@ class ApplicationController < ActionController::API
         ]
     }, status: :bad_request
   end
-  #
-  # def sign_in_params
-  #   params.require(:user).permit :email, :password
-  # end
 end

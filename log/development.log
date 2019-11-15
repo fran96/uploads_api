@@ -15678,3 +15678,1892 @@ Processing by UploadsController#create as */*
 Completed 201 Created in 133ms (Views: 2.5ms | ActiveRecord: 110.3ms | Allocations: 18697)
 
 
+Started POST "/login" for ::1 at 2019-11-14 14:09:45 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 8673)
+
+
+Started POST "/login" for ::1 at 2019-11-14 14:10:01 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1944)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-14 14:10:25 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 486)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-14 14:10:30 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "ed91b453-d84a-4338-b226-62863b0097f9"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 2.6ms | Allocations: 1875)
+  Rendered uploads/show.json.jbuilder (Duration: 4.1ms | Allocations: 2300)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms | Allocations: 6384)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads" for ::1 at 2019-11-14 14:10:50 +0100
+Processing by UploadsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started POST "/login" for ::1 at 2019-11-14 14:11:28 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1933)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-14 14:11:41 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "79b39201-c475-400e-9647-3bb34de96eef"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.9ms | Allocations: 1473)
+  Rendered uploads/show.json.jbuilder (Duration: 1.2ms | Allocations: 1570)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.4ms | Allocations: 4346)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started POST "/login" for ::1 at 2019-11-14 14:12:20 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 8673)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUpload Load (0.4ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 113], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.4ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Started POST "/uploads" for ::1 at 2019-11-14 14:16:18 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "9c3df52a-bae5-48ab-9113-812f5899318d"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms | Allocations: 10105)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/uploads_controller.rb:23:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUpload Load (1.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/uploads" for ::1 at 2019-11-14 14:19:17 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"image"=>"myname.pdf"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 1290)
+
+
+Started POST "/login" for ::1 at 2019-11-14 14:19:21 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 9088)
+
+
+Started POST "/uploads" for ::1 at 2019-11-14 14:19:27 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "cce207bf-8da0-4c80-8952-b166fb6d756a"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 3510)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/uploads_controller.rb:23:in `create'
+Started POST "/uploads" for ::1 at 2019-11-14 14:21:06 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556514c44a68 @tempfile=#<Tempfile:/tmp/RackMultipart20191114-9952-ej94fb.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "cce207bf-8da0-4c80-8952-b166fb6d756a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-14 13:21:06.263320"], ["updated_at", "2019-11-14 13:21:06.263320"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (138.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.7ms | Allocations: 154)
+  Rendered uploads/show.json.jbuilder (Duration: 3.0ms | Allocations: 699)
+Completed 201 Created in 189ms (Views: 8.3ms | ActiveRecord: 142.0ms | Allocations: 21982)
+
+
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Started POST "/login" for ::1 at 2019-11-15 10:08:42 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 8673)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:08:55 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "dbed2109-4445-4505-9376-91f4021b5f79"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 13.2ms | Allocations: 1837)
+  Rendered uploads/show.json.jbuilder (Duration: 36.1ms | Allocations: 2262)
+Completed 500 Internal Server Error in 571ms (ActiveRecord: 0.9ms | Allocations: 6379)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started POST "/uploads" for ::1 at 2019-11-15 10:09:05 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556d7bb4b048 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1twaupb.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "dbed2109-4445-4505-9376-91f4021b5f79"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[36mUpload Create (0.4ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:09:05.415943"], ["updated_at", "2019-11-15 09:09:05.415943"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[35m (162.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 83)
+  Rendered uploads/show.json.jbuilder (Duration: 1.4ms | Allocations: 414)
+Completed 201 Created in 371ms (Views: 47.6ms | ActiveRecord: 163.9ms | Allocations: 14357)
+
+
+Started GET "/uploads" for ::1 at 2019-11-15 10:09:47 +0100
+Processing by UploadsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "dbed2109-4445-4505-9376-91f4021b5f79"], ["LIMIT", 1]]
+  Rendering uploads/index.json.jbuilder
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads"[0m
+  ↳ app/views/uploads/index.json.jbuilder:1
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.5ms | Allocations: 196)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.9ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/index.json.jbuilder (Duration: 40.2ms | Allocations: 4202)
+Completed 200 OK in 50ms (Views: 40.4ms | ActiveRecord: 0.5ms | Allocations: 7181)
+
+
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:14:12 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 495)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:14:15 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1935)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:14:22 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556d7a3eabd8 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1cv38j3.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[36mUpload Create (0.2ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:14:23.094162"], ["updated_at", "2019-11-15 09:14:23.094162"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  [1m[35m (132.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:28:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 143)
+  Rendered uploads/show.json.jbuilder (Duration: 1.4ms | Allocations: 555)
+Completed 201 Created in 241ms (Views: 2.7ms | ActiveRecord: 133.3ms | Allocations: 8137)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:14:39 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:14:43 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.0ms | Allocations: 1443)
+  Rendered uploads/show.json.jbuilder (Duration: 1.6ms | Allocations: 1652)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 4526)
+
+
+  
+ActionView::Template::Error (undefined method `filename' for nil:NilClass):
+    1: json.extract! upload,  :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:15:49 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.9ms | Allocations: 1501)
+  Rendered uploads/show.json.jbuilder (Duration: 3.6ms | Allocations: 1804)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.9ms | Allocations: 11016)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:17:10 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.9ms | Allocations: 1435)
+  Rendered uploads/show.json.jbuilder (Duration: 2.3ms | Allocations: 1532)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.3ms | Allocations: 10577)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:17:39 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.2ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 2.2ms | Allocations: 1530)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.1ms | Allocations: 10739)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:18:50 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.1ms | Allocations: 1435)
+  Rendered uploads/show.json.jbuilder (Duration: 1.5ms | Allocations: 1531)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms | Allocations: 10607)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:19:01 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "438b9e72-7239-4a8e-b86d-1b444c5956c7"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.7ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 0.9ms | Allocations: 1530)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms | Allocations: 10572)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:19:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:19:28 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 139ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 7349)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:19:36 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.2ms | Allocations: 1472)
+  Rendered uploads/show.json.jbuilder (Duration: 1.6ms | Allocations: 1568)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 4806)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:20:28 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.8ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 1.2ms | Allocations: 1530)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms | Allocations: 10571)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:20:52 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.7ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 1.4ms | Allocations: 1530)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.1ms | Allocations: 10573)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:21:16 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.1ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 1.5ms | Allocations: 1530)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms | Allocations: 10588)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:23:24 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.5ms | Allocations: 1472)
+  Rendered uploads/show.json.jbuilder (Duration: 4.2ms | Allocations: 1568)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms | Allocations: 4323)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:23:55 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7d05b2ae-d2c3-4f6c-ba7f-66fef900e8d8"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.8ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 1.1ms | Allocations: 1530)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms | Allocations: 10571)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:24:28 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:24:31 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 7384)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:24:39 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "6057571d-e155-446c-9cf0-6c020521cdf1"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.6ms | Allocations: 1472)
+  Rendered uploads/show.json.jbuilder (Duration: 2.6ms | Allocations: 1568)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 4807)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:24:51 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "6057571d-e155-446c-9cf0-6c020521cdf1"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 2.1ms | Allocations: 1472)
+  Rendered uploads/show.json.jbuilder (Duration: 2.8ms | Allocations: 1568)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms | Allocations: 4323)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:29:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "6057571d-e155-446c-9cf0-6c020521cdf1"], ["LIMIT", 1]]
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.6ms | Allocations: 1434)
+  Rendered uploads/show.json.jbuilder (Duration: 0.9ms | Allocations: 1530)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms | Allocations: 10571)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:1
+Started POST "/uploads" for ::1 at 2019-11-15 10:29:31 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c5615f8 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-d0yo10.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:30:08 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c5b0630 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1bg86xk.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:30:10 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c6042d0 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-dtqy6z.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:30:13 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 126ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2195)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:30:17 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1929)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:30:22 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9c6e3308 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-zxszii.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "99518385-24dd-4246-a2df-eca256fc473e"], ["LIMIT", 1]]
+My object: #<Upload id: nil, filename: "myname.pdf", uri: "/home/fran/Documents/Repos/uploads_api/uploads/myn...", created_at: nil, updated_at: nil, user_id: 1>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:30:22.822589"], ["updated_at", "2019-11-15 09:30:22.822589"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[35m (130.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 80)
+  Rendered uploads/show.json.jbuilder (Duration: 0.9ms | Allocations: 410)
+Completed 201 Created in 154ms (Views: 2.1ms | ActiveRecord: 132.6ms | Allocations: 12689)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:32:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9ca99f88 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-16wdykh.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "99518385-24dd-4246-a2df-eca256fc473e"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:32:27.179399"], ["updated_at", "2019-11-15 09:32:27.179399"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+  [1m[35m (183.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:27:in `create'
+My object: #<Upload id: 15, filename: "myname.pdf", uri: "/home/fran/Documents/Repos/uploads_api/uploads/myn...", created_at: "2019-11-15 09:32:27", updated_at: "2019-11-15 09:32:27", user_id: 1>
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 75)
+  Rendered uploads/show.json.jbuilder (Duration: 1.1ms | Allocations: 258)
+Completed 201 Created in 212ms (Views: 2.9ms | ActiveRecord: 185.2ms | Allocations: 18748)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:34:05 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms | Allocations: 1125)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:34:09 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 134ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 7331)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:34:26 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+My object: nil
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.2ms | Allocations: 1538)
+  Rendered uploads/show.json.jbuilder (Duration: 2.4ms | Allocations: 1915)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 5322)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:4
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:34:46 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+My object: nil
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.0ms | Allocations: 1538)
+  Rendered uploads/show.json.jbuilder (Duration: 2.0ms | Allocations: 1901)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 4971)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! upload, :id, :filename, :created_at, :updated_at
+    2: json.url upload_url(upload, format: :json)
+  
+app/views/uploads/_upload.json.jbuilder:1
+app/views/uploads/show.json.jbuilder:4
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:37:32 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms | Allocations: 9027)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/uploads_controller.rb:13:in `show'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:37:40 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 2934)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/uploads_controller.rb:13:in `show'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:37:42 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 2933)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/uploads_controller.rb:13:in `show'
+Started GET "/uploads?id=9" for ::1 at 2019-11-15 10:37:59 +0100
+Processing by UploadsController#index as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "a35527a2-d974-4142-9fcb-8644834aefd4"], ["LIMIT", 1]]
+  Rendering uploads/index.json.jbuilder
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads"[0m
+  ↳ app/views/uploads/index.json.jbuilder:1
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.6ms | Allocations: 199)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 100)
+  Rendered uploads/index.json.jbuilder (Duration: 18.2ms | Allocations: 8670)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 1.1ms | Allocations: 12194)
+
+
+Started GET "/uploads?id=9" for ::1 at 2019-11-15 10:39:57 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#index as */*
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:40:00 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 7298)
+
+
+Started GET "/uploads?id=9" for ::1 at 2019-11-15 10:40:11 +0100
+Processing by UploadsController#index as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  Rendering uploads/index.json.jbuilder
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads"[0m
+  ↳ app/views/uploads/index.json.jbuilder:1
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 131)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 11.8ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 100)
+  Rendered uploads/index.json.jbuilder (Duration: 27.4ms | Allocations: 8345)
+Completed 200 OK in 38ms (Views: 28.7ms | ActiveRecord: 2.3ms | Allocations: 12017)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:40:16 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 116)
+  Rendered uploads/show.json.jbuilder (Duration: 2.8ms | Allocations: 876)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 4412)
+
+
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:40:23 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 116)
+  Rendered uploads/show.json.jbuilder (Duration: 1.4ms | Allocations: 664)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 3930)
+
+
+Started GET "/uploads9/" for ::1 at 2019-11-15 10:40:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/uploads9"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:40:54 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 116)
+  Rendered uploads/show.json.jbuilder (Duration: 2.2ms | Allocations: 666)
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 3938)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:41:59 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  Rendering uploads/show.html.erb
+  Rendered uploads/show.html.erb (Duration: 0.3ms | Allocations: 93)
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 9156)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:42:19 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  Rendering uploads/show.html.erb
+  Rendered uploads/show.html.erb (Duration: 0.4ms | Allocations: 101)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 3025)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:44:38 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  Rendering uploads/show.html.erb
+  Rendered uploads/show.html.erb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 9020)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:44:48 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "3d6573a4-f26d-4453-ab15-42eba6732132"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.8ms | Allocations: 13683)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - /home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:15:in `initialize'
+app/controllers/uploads_controller.rb:15:in `open'
+app/controllers/uploads_controller.rb:15:in `show'
+Started GET "/home/fran/Documents/Repos/upload-api/uploads/myname.pdf" for ::1 at 2019-11-15 10:45:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/home/fran/Documents/Repos/upload-api/uploads/myname.pdf"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:46:17 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:46:20 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 7298)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:46:28 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c67ab7aa-782d-4bb3-99c6-fa012b55caca"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf (0.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.7ms | Allocations: 7972)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 10:46:41 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-11-15 10:46:41 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:47:42 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c67ab7aa-782d-4bb3-99c6-fa012b55caca"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api//home/fran/Documents/Repos/upload-api/uploads/myname.pdf (0.2ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.1ms | Allocations: 14012)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/fran/Documents/Repos/uploads_api//home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:52:23 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1124)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:52:35 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 7340)
+
+
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:52:41 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.6ms | Allocations: 8897)
+
+
+  
+NoMethodError (undefined method `path' for "/home/fran/Documents/Repos/upload-api/uploads/myname.pdf":String
+Did you mean?  pathmap):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+Started GET "/uploads/9" for ::1 at 2019-11-15 10:53:11 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf (0.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.3ms | Allocations: 13734)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+Started POST "/uploads" for ::1 at 2019-11-15 10:55:00 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9c832d08 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-zz6cn5.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:55:09 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9c880198 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1e5jqzw.pdf>, @original_filename="document.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document.pdf\"\r\nContent-Type: application/pdf\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (1.5ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:55:09.370437"], ["updated_at", "2019-11-15 09:55:09.370437"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (196.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 146)
+  Rendered uploads/showw.json.jbuilder (Duration: 2.3ms | Allocations: 1175)
+Completed 201 Created in 219ms (Views: 3.9ms | ActiveRecord: 198.2ms | Allocations: 9619)
+
+
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Started GET "/uploads/11" for ::1 at 2019-11-15 10:55:38 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/myname.pdf (0.5ms)
+Completed 200 OK in 88ms (ActiveRecord: 0.5ms | Allocations: 3246)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:57:03 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9ca7ff48 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-3selns.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"myname.pdf"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (1.5ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "myname.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/myname.pdf"], ["created_at", "2019-11-15 09:57:03.574920"], ["updated_at", "2019-11-15 09:57:03.574920"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (129.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 74)
+  Rendered uploads/showw.json.jbuilder (Duration: 1.3ms | Allocations: 673)
+Completed 201 Created in 150ms (Views: 1.9ms | ActiveRecord: 131.5ms | Allocations: 7919)
+
+
+Started GET "/uploads/17" for ::1 at 2019-11-15 10:57:11 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/myname.pdf (0.3ms)
+Completed 200 OK in 10ms (ActiveRecord: 0.7ms | Allocations: 3209)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:57:23 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c770290 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-196cn80.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhcgn"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (1.7ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhcgn"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/vnhcgn"], ["created_at", "2019-11-15 09:57:23.053622"], ["updated_at", "2019-11-15 09:57:23.053622"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (123.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 74)
+  Rendered uploads/showw.json.jbuilder (Duration: 3.0ms | Allocations: 673)
+Completed 201 Created in 146ms (Views: 4.1ms | ActiveRecord: 125.6ms | Allocations: 8214)
+
+
+Started GET "/uploads/18" for ::1 at 2019-11-15 10:57:30 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "b1c83ab2-51b9-4969-ae8b-1a6d112f767a"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/vnhcgn (0.2ms)
+Completed 200 OK in 16ms (ActiveRecord: 0.7ms | Allocations: 3207)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:57:46 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c715a70 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1uqp8a8.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-15 10:57:50 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2134)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:58:02 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556d7b437b30 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-8jbt58.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (1.4ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/vnhhcgn.png"], ["created_at", "2019-11-15 09:58:02.296267"], ["updated_at", "2019-11-15 09:58:02.296267"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (117.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 74)
+  Rendered uploads/showw.json.jbuilder (Duration: 1.4ms | Allocations: 708)
+Completed 201 Created in 135ms (Views: 2.1ms | ActiveRecord: 119.5ms | Allocations: 8250)
+
+
+Started GET "/uploads/19" for ::1 at 2019-11-15 10:58:09 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19"}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/uploads/19" for ::1 at 2019-11-15 10:58:13 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/vnhhcgn.png (0.2ms)
+Completed 200 OK in 7ms (ActiveRecord: 0.5ms | Allocations: 3209)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:59:33 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c792188 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1pfw6y5.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (0.8ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/1vnhhcgn.png"], ["created_at", "2019-11-15 09:59:33.770594"], ["updated_at", "2019-11-15 09:59:33.770594"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (140.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 80)
+  Rendered uploads/showw.json.jbuilder (Duration: 2.5ms | Allocations: 808)
+Completed 201 Created in 175ms (Views: 4.0ms | ActiveRecord: 142.4ms | Allocations: 19516)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 10:59:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e9c90ec18 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-8ajz16.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/1-vnhhcgn.png"], ["created_at", "2019-11-15 09:59:51.495023"], ["updated_at", "2019-11-15 09:59:51.495023"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (83.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/showw.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 80)
+  Rendered uploads/showw.json.jbuilder (Duration: 2.4ms | Allocations: 808)
+Completed 201 Created in 132ms (Views: 6.3ms | ActiveRecord: 85.4ms | Allocations: 19432)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 11:01:20 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556d7b86d358 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1h3uiz.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/1-vnhhcgn.png"], ["created_at", "2019-11-15 10:01:20.958583"], ["updated_at", "2019-11-15 10:01:20.958583"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (117.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/show.html.erb
+  Rendered uploads/show.html.erb (Duration: 0.1ms | Allocations: 8)
+Completed 201 Created in 141ms (Views: 1.0ms | ActiveRecord: 120.1ms | Allocations: 18487)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 11:02:04 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000556d7bbce3d0 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-gs459y.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/1-vnhhcgn.png"], ["created_at", "2019-11-15 10:02:04.270154"], ["updated_at", "2019-11-15 10:02:04.270154"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  [1m[35m (139.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:29:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 146)
+  Rendered uploads/show.json.jbuilder (Duration: 2.3ms | Allocations: 1150)
+Completed 201 Created in 159ms (Views: 3.4ms | ActiveRecord: 140.8ms | Allocations: 8732)
+
+
+Started GET "/uploads/19" for ::1 at 2019-11-15 11:02:11 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "4857b96a-c08b-405e-84a2-873fb5ea0908"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/vnhhcgn.png (0.3ms)
+Completed 200 OK in 11ms (ActiveRecord: 0.6ms | Allocations: 3339)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:03:54 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:04:23 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 7297)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:04:33 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 2.2ms | Allocations: 4681)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:04:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.8ms | Allocations: 10468)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:05:44 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 2.6ms | Allocations: 10429)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:05:51 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 3432)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:06:04 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 2.3ms | Allocations: 10468)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:06:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 14ms (ActiveRecord: 2.5ms | Allocations: 10470)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:07:28 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/fran/Documents/Repos/uploads_api/app/controllers/uploads_controller.rb:62: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/uploads_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+app/controllers/uploads_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+app/controllers/uploads_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:07:39 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms | Allocations: 12129)
+
+
+  [1m[36mCACHE Upload Load (0.0ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `uri' for #<ActiveRecord::Relation []>):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+  [1m[36mCACHE Upload Load (0.0ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:08:31 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.8ms | Allocations: 12085)
+
+
+  [1m[36mCACHE Upload Load (0.0ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `uri' for #<ActiveRecord::Relation []>):
+  
+app/controllers/uploads_controller.rb:15:in `show'
+  [1m[36mCACHE Upload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 11]]
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:08:48 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "76df64d2-e56f-43f3-be2d-f08b77392868"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 2.2ms | Allocations: 10468)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:10:05 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1121)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:10:08 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 7298)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:10:15 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "41604865-e8b4-4e34-ad44-d878edffe59e"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 14ms (ActiveRecord: 1.8ms | Allocations: 4707)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:12:23 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "41604865-e8b4-4e34-ad44-d878edffe59e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 422 Unprocessable Entity in 21ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 10098)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:15:02 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "41604865-e8b4-4e34-ad44-d878edffe59e"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 404 Not Found in 34ms (ActiveRecord: 2.6ms | Allocations: 10468)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=19555):
+  
+app/controllers/uploads_controller.rb:14:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:17:54 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:17:56 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 7298)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:18:03 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "1a532721-d2d7-4e50-ace5-adf079de7394"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 4296)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 11:21:14 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c846778 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-jvxbg9.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:21:20 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1930)
+
+
+Started POST "/uploads" for ::1 at 2019-11-15 11:21:26 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f4e8c6c7e60 @tempfile=#<Tempfile:/tmp/RackMultipart20191115-24745-1gf9dfr.png>, @original_filename="Screenshot from 2019-11-06 09-55-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"Screenshot from 2019-11-06 09-55-39.png\"\r\nContent-Type: image/png\r\n">, "image"=>"vnhhcgn.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c7c90ab0-5025-4051-a33c-4222dc1f2c4e"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (1.2ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "vnhhcgn.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/1-vnhhcgn.png"], ["created_at", "2019-11-15 10:21:26.955306"], ["updated_at", "2019-11-15 10:21:26.955306"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (164.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 80)
+  Rendered uploads/show.json.jbuilder (Duration: 1.8ms | Allocations: 841)
+Completed 201 Created in 209ms (Views: 3.3ms | ActiveRecord: 166.3ms | Allocations: 12328)
+
+
+Started DELETE "/uploads/11" for ::1 at 2019-11-15 11:21:41 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"11"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/uploads/11" for ::1 at 2019-11-15 11:21:51 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c7c90ab0-5025-4051-a33c-4222dc1f2c4e"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 3324)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:53:in `destroy'
+Started DELETE "/uploads/11.json" for ::1 at 2019-11-15 11:22:30 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#destroy as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c7c90ab0-5025-4051-a33c-4222dc1f2c4e"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.4ms | Allocations: 9417)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:53:in `destroy'
+Started DELETE "/uploads/9.json" for ::1 at 2019-11-15 11:22:38 +0100
+Processing by UploadsController#destroy as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c7c90ab0-5025-4051-a33c-4222dc1f2c4e"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3321)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:53:in `destroy'
+Started DELETE "/uploads/9.json" for ::1 at 2019-11-15 11:24:31 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#destroy as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "c7c90ab0-5025-4051-a33c-4222dc1f2c4e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.9ms | Allocations: 10756)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:54:in `destroy'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:24:40 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:24:42 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 129ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2198)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:24:48 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.6ms | Allocations: 86360)
+
+
+  
+NameError (undefined local variable or method `json' for #<UploadsController:0x00007f4e8c4c7ea8>
+Did you mean?  JSON):
+  
+app/controllers/uploads_controller.rb:19:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:24:58 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.4ms | Allocations: 11244)
+
+
+  
+NoMethodError (undefined method `message' for JSON:Module):
+  
+app/controllers/uploads_controller.rb:19:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:26:12 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 10103)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:26:29 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.6ms | Allocations: 10711)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:19:in `show'
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:26:38 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 422 Unprocessable Entity in 30ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 10103)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:26:46 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 422 Unprocessable Entity in 20ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 10064)
+
+
+Started GET "/uploads/19555" for ::1 at 2019-11-15 11:28:38 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"19555"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 19555], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  Rendering uploads/error.json.jbuilder
+  Rendered uploads/error.json.jbuilder (Duration: 1.5ms | Allocations: 103)
+Completed 200 OK in 56ms (Views: 4.4ms | ActiveRecord: 3.2ms | Allocations: 10834)
+
+
+Started DELETE "/uploads/9.json" for ::1 at 2019-11-15 11:28:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#destroy as JSON
+  Parameters: {"id"=>"9"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1123)
+
+
+Started POST "/login" for ::1 at 2019-11-15 11:28:56 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 139ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 7300)
+
+
+Started DELETE "/uploads/9.json" for ::1 at 2019-11-15 11:29:02 +0100
+Processing by UploadsController#destroy as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.6ms | Allocations: 4989)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:54:in `destroy'
+Started DELETE "/uploads/9" for ::1 at 2019-11-15 11:29:26 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms | Allocations: 3928)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:54:in `destroy'
+Started GET "/uploads/9" for ::1 at 2019-11-15 11:29:32 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:15:in `show'
+Sent file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf (0.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms | Allocations: 7565)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:16:in `show'
+Started GET "/uploads/9.json" for ::1 at 2019-11-15 11:29:41 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "7c207220-fa9b-4406-bad5-00179848a16e"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:15:in `show'
+Sent file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf (0.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 4091)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/fran/Documents/Repos/upload-api/uploads/myname.pdf):
+  
+app/controllers/uploads_controller.rb:16:in `show'
+Started GET "/uploads/11" for ::1 at 2019-11-15 11:29:53 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"11"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/uploads/11" for ::1 at 2019-11-15 11:29:58 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:15:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/myname.pdf (0.2ms)
+Completed 200 OK in 9ms (ActiveRecord: 0.7ms | Allocations: 3804)
+
+
+Started DELETE "/uploads/11" for ::1 at 2019-11-15 11:30:06 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 3927)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/uploads_controller.rb:54:in `destroy'
+Started GET "/uploads/13" for ::1 at 2019-11-15 11:30:43 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:15:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/myname.pdf (0.2ms)
+Completed 200 OK in 17ms (ActiveRecord: 0.5ms | Allocations: 3803)
+
+
+Started GET "/uploads/13" for ::1 at 2019-11-15 11:31:02 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bcf0e7c3-1504-4551-a0b6-61c83c02c329"], ["LIMIT", 1]]
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:63:in `upload_exists?'
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:15:in `show'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/myname.pdf (0.5ms)
+Completed 200 OK in 15ms (ActiveRecord: 0.8ms | Allocations: 3804)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/login" for ::1 at 2019-11-15 17:59:32 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 8672)
+
+
