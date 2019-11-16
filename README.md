@@ -25,7 +25,8 @@ To examine the DB contents:
 ### Prerequisites
 
 1. Ruby 2.6.3
-2. Download postman and use [this collection](docs/upload-api.postman_collection.json) to run the API calls:
+2. Download postman
+3. Download [this collection](docs/upload-api.postman_collection.json) and import it in Postman to run the API calls. Then follow the steps below:
 
 * First you need to run the SignUp call in postman in order to create a user
 * Then you can run the SignIn call and once done, take the authorization token from the Headers (under 'authorization' : Bearer ...)
