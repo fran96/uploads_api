@@ -1,7 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
-  # uses Devise methods to create a user
   def create
     build_resource(user_params)
     resource.save
