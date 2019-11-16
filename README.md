@@ -4,8 +4,10 @@ Allows you to upload files/images from a client (postman) to the server.
 
 ## Getting Started
 
-bundle install
-rails server
+To get started run the below commands in the uploads_api directory:
+
+* bundle install
+* rails server
 
 
 ### Examine DB contents
