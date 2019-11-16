@@ -1,0 +1,231 @@
+{
+	"id": "fb48b216-afc6-a400-a7f7-65698aad0f66",
+	"name": "upload-api",
+	"description": "",
+	"order": [
+		"6931905b-1888-ef8e-67de-435846578e5d",
+		"287b606a-008e-09fb-0a7c-1bf3fd284ac2",
+		"3a2e0c80-40d6-c35a-f7f5-e2936223c29d",
+		"9f38815c-233a-7a12-0c50-ee423c727ab1",
+		"af78df47-caaa-ffaa-754b-446fac7cd428",
+		"13e11ce6-a4bb-7731-9caa-40d25d747ba8",
+		"32f11e6e-2915-8721-fcce-5910f0fc72dc"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1573389081133,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "13e11ce6-a4bb-7731-9caa-40d25d747ba8",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTczOTMwNzgyLCJleHAiOjE1NzM5MzE2ODIsImp0aSI6ImMzYzQwM2Y5LTU2YTEtNDgyZS1hMjY3LTkzZDg4YTZhY2YxOCJ9.Nxip9HJj3JH-a01zqHrbCN1XVKO9WGiCrqut-G9QiXI\n",
+			"url": "localhost:3000/uploads/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"name": "DeleteFile",
+			"description": "",
+			"sandboxFiles": "",
+			"sendMethod": "xhr",
+			"time": 1573930952448,
+			"responses": [],
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66"
+		},
+		{
+			"id": "287b606a-008e-09fb-0a7c-1bf3fd284ac2",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/signup",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "user[email]",
+					"value": "testing3@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user[password]",
+					"value": "testpass111111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573813292091,
+			"name": "SignUp",
+			"description": "",
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66",
+			"responses": []
+		},
+		{
+			"id": "32f11e6e-2915-8721-fcce-5910f0fc72dc",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTczOTMwNzgyLCJleHAiOjE1NzM5MzE2ODIsImp0aSI6ImMzYzQwM2Y5LTU2YTEtNDgyZS1hMjY3LTkzZDg4YTZhY2YxOCJ9.Nxip9HJj3JH-a01zqHrbCN1XVKO9WGiCrqut-G9QiXI\n",
+			"url": "localhost:3000/uploads",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "upload[binary]",
+					"value": "image (5).png",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "upload[file]",
+					"value": "neww.png",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"name": "UploadFiles",
+			"description": "",
+			"sandboxFiles": "",
+			"sendMethod": "xhr",
+			"time": 1573930970622,
+			"responses": [],
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66"
+		},
+		{
+			"id": "3a2e0c80-40d6-c35a-f7f5-e2936223c29d",
+			"headers": "//user[email]: shh@gmail.com\n//user[password]: 123443545463\n",
+			"headerData": [
+				{
+					"key": "user[email]",
+					"value": "shh@gmail.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "user[password]",
+					"value": "123443545463",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "localhost:3000/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "user[email]",
+					"value": "testing3@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user[password]",
+					"value": "testpass111111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573813291244,
+			"name": "SignIn",
+			"description": "",
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66",
+			"responses": []
+		},
+		{
+			"id": "6931905b-1888-ef8e-67de-435846578e5d",
+			"headers": "",
+			"headerData": [],
+			"url": "",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66",
+			"data": null,
+			"dataMode": "params",
+			"name": "register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573389082368,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "9f38815c-233a-7a12-0c50-ee423c727ab1",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:3000/uploads/10",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573424075627,
+			"name": "GetSpecifcFile",
+			"description": "",
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66",
+			"responses": []
+		},
+		{
+			"id": "af78df47-caaa-ffaa-754b-446fac7cd428",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTczOTMwNzgyLCJleHAiOjE1NzM5MzE2ODIsImp0aSI6ImMzYzQwM2Y5LTU2YTEtNDgyZS1hMjY3LTkzZDg4YTZhY2YxOCJ9.Nxip9HJj3JH-a01zqHrbCN1XVKO9WGiCrqut-G9QiXI\n",
+			"url": "http://localhost:3000/uploads/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"name": "GetUploads",
+			"description": "",
+			"sandboxFiles": "",
+			"sendMethod": "xhr",
+			"time": 1573930912240,
+			"responses": [],
+			"collectionId": "fb48b216-afc6-a400-a7f7-65698aad0f66"
+		}
+	]
+}

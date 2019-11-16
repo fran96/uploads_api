@@ -18,7 +18,7 @@ To examine the DB contents:
 
 ### Prerequisites
 
-Download postman and use this collection to run the API calls:
+Download postman and use [this collection](docs/upload-api.postman_collection.json) to run the API calls:
 
 * First you need to run the SignUp call in postman in order to create a user
 * Then you can run the SignIn call and once done, take the authorization token from the Headers (under 'authorization' : Bearer ...)
