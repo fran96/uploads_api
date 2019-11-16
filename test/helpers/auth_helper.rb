@@ -1,6 +1,5 @@
 module AuthHelper
   def sign_up(user)
-    puts user
     post '/signup/',
          params: {user:{
                   "email"=> user[:email],
@@ -10,7 +9,7 @@ module AuthHelper
 
   end
 
-  def authorize_user(user)
+  def authorize(user)
     post '/login',
          params: {user:{
              "email"=> user[:email],

@@ -23,10 +23,10 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.json
   def create
-    file_name = params[:upload][:image]
-    @incoming_file = params[:upload][:binary]
-    uri = "#{Rails.root}/uploads/#{current_user.id}-#{file_name}"
-    FileUtils.mv @incoming_file, uri
+    file_name = params[:upload][:file]
+    incoming_file = params[:upload][:binary]
+    uri = "#{Rails.root}/uploads/#{file_name}"
+    FileUtils.cp_r incoming_file, uri
 
     @upload = Upload.new(user_id: current_user.id, filename: file_name, uri: uri)
 
@@ -37,20 +37,11 @@ class UploadsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /uploads/1
-  # PATCH/PUT /uploads/1.json
-  def update
-    if @upload.update(upload_params)
-      render :show, status: :ok, location: @upload
-    else
-      render json: @upload.errors, status: :unprocessable_entity
-    end
-  end
-
   # DELETE /uploads/1
   # DELETE /uploads/1.json
   def destroy
     if upload_exists?(params[:id])
+      @upload = Upload.find(params[:id])
       @upload.destroy
     else
       render :error
@@ -68,6 +59,6 @@ class UploadsController < ApplicationController
   end
 
   def upload_params
-      params.require(:upload).permit(:binary, :image)
+      params.require(:upload).permit(:binary, :file)
   end
 end

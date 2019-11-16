@@ -1,24 +1,39 @@
-# README
+# Upload API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Allows you to upload files/images from a client (postman) to the server. 
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+rake db:create
+rake db:migrate
+rails server
 
-* System dependencies
+To examine the DB contents:
+* In the terminal cd to uploads-api and run 'rails c'
+* Type User.all, or Upload.all to see all the users and uploads
 
-* Configuration
+### Prerequisites
 
-* Database creation
+Download postman and use this collection to run the API calls:
 
-* Database initialization
+The authorization token will expire every 15 minutes, so you need to copy the Bearer token under 'authorization' in the headers section of the SignUp call,
+and add the new token to each call you make (replace it in the Headers field)
 
-* How to run the test suite
+## Running the integration tests
 
-* Services (job queues, cache servers, search engines, etc.)
+rails test test/controllers/uploads_controller_test.rb
 
-* Deployment instructions
+## Deployment
 
-* ...
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Devise](https://github.com/plataformatec/devise) - For authentication
+* [DeviseJWT](https://github.com/waiting-for-dev/devise-jwt) - For authentication
+
+## Authors
+
+* **Francesca Micallef** - *Initial work* - [FrancescaMicallef](https://github.com/fran96)
+
+
