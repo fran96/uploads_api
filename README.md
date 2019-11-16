@@ -25,10 +25,10 @@ Download postman and use this collection to run the API calls:
 
 ### Steps to upload, view, download and delete files
 
-* To upload a file, use the UploadFiles call, and upload a file from your PC using the postman client as seen here: [Uploading a file](docs/uploading_a_file.jpg) and here [Uploading a file](docs/uploading_an_image.jpg). Make sure to name the file using the right extension.
-* You may preview an image file as seen here: [Uploading a file](docs/previewing_image_file.jpg)
-* To download a pdf file, simply run the UploadFiles call and you will be prompted to save your file somewhere locally, as seen here: [Uploading a file](docs/download_a_pdf.jpg)
-* To delete a file, run the DeleteFile call, and enter the upload ID of the file you wish to delete. You will receive a response saying your file has been deleted, as seen here: [Uploading a file](docs/deleting_a_file.jpg)
+* To upload a file, use the UploadFiles call, and upload a file from your PC using the postman client as seen here: [1.Uploading a file](docs/uploading_a_file.jpg) and here [2.Uploading a file](docs/uploading_an_image.jpg). Make sure to name the file using the right extension.
+* You may preview an image file as seen here: [Previewing an image](docs/previewing_image_file.jpg)
+* To download a pdf file, simply run the UploadFiles call and you will be prompted to save your file somewhere locally, as seen here: [Download a file](docs/download_a_pdf.jpg)
+* To delete a file, run the DeleteFile call, and enter the upload ID of the file you wish to delete. You will receive a response saying your file has been deleted, as seen here: [Deleting a file](docs/deleting_a_file.jpg)
 
 ## Running the integration tests
 
