@@ -18118,3 +18118,577 @@ Completed 200 OK in 159ms (Views: 0.6ms | ActiveRecord: 131.2ms | Allocations: 6
   [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (125.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191110151222)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110151222"]]
+  [1m[35m (133.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUploads (20191110154851)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filename" varchar, "uri" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110154851"]]
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserToUploads (20191110181943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "uploads" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_auploads_on_user_id" ON "auploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "uploads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "uploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_15d41e668d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "uploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "auploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "auploads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110181943"]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJwtBlacklist (20191111232825)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "jwt_blacklist" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "jti" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_jwt_blacklist_on_jti" ON "jwt_blacklist" ("jti")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111232825"]]
+  [1m[35m (109.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-16 18:11:47.963441"], ["updated_at", "2019-11-16 18:11:47.963441"]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2019-11-16 19:14:11 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms | Allocations: 2835)
+
+
+Started POST "/signup" for ::1 at 2019-11-16 19:14:22 +0100
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "testing3@gmail.com"], ["encrypted_password", "$2a$11$YwkDbE0J2xZfUpOWadKfTOXRWhndDNVAo6CRO8cxRXdpdKcb9XYhm"], ["created_at", "2019-11-16 18:14:22.335778"], ["updated_at", "2019-11-16 18:14:22.335778"]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[35m (73.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+Completed 200 OK in 211ms (Views: 0.5ms | ActiveRecord: 74.1ms | Allocations: 10603)
+
+
+Started POST "/login" for ::1 at 2019-11-16 19:14:30 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 129ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2109)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:14:43 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e724327290 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-1aq0blh.pdf>, @original_filename="document (2).pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document (2).pdf\"\r\nContent-Type: application/pdf\r\n">, "file"=>"test23344.pdf"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bb3161d5-5089-48f5-bb3b-c41287deb61b"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.2ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "test23344.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/test23344.pdf"], ["created_at", "2019-11-16 18:14:43.580398"], ["updated_at", "2019-11-16 18:14:43.580398"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (157.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 152)
+  Rendered uploads/show.json.jbuilder (Duration: 1.5ms | Allocations: 699)
+Completed 201 Created in 186ms (Views: 3.8ms | ActiveRecord: 159.7ms | Allocations: 15586)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:17:29 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e723cb54c0 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-7qwakl.pdf>, @original_filename="document (2).pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"document (2).pdf\"\r\nContent-Type: application/pdf\r\n">, "file"=>"test23344.pdf"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bb3161d5-5089-48f5-bb3b-c41287deb61b"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.5ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "test23344.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/test23344.pdf"], ["created_at", "2019-11-16 18:17:29.154851"], ["updated_at", "2019-11-16 18:17:29.154851"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (121.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 80)
+  Rendered uploads/show.json.jbuilder (Duration: 1.1ms | Allocations: 264)
+Completed 201 Created in 150ms (Views: 3.2ms | ActiveRecord: 123.4ms | Allocations: 18769)
+
+
+Started GET "/uploads/2.json" for ::1 at 2019-11-16 19:17:35 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bda3099b-b565-4172-85d0-baf0a723525b"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.3ms | Allocations: 45051)
+
+
+  
+NoMethodError (undefined method `set_uploads' for #<UploadsController:0x000055e7243caaf8>
+Did you mean?  set_upload):
+  
+activesupport (6.0.1) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.1) lib/active_support/callbacks.rb:182:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.1) lib/active_support/callbacks.rb:183:in `block in halting_and_conditional'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden-jwt_auth (0.3.6) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.3.6) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.3.6) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/uploads/2.json" for ::1 at 2019-11-16 19:17:50 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bda3099b-b565-4172-85d0-baf0a723525b"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/test23344.pdf (0.3ms)
+Completed 200 OK in 29ms (ActiveRecord: 2.3ms | Allocations: 14189)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:28:30 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e722bef870 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-1i7fpng.pdf>, @original_filename="FrancescaMicallefCV_Updated.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"FrancescaMicallefCV_Updated.pdf\"\r\nContent-Type: application/pdf\r\n">, "file"=>"new.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "bb3161d5-5089-48f5-bb3b-c41287deb61b"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.7ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "new.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/new.pdf"], ["created_at", "2019-11-16 18:28:31.004671"], ["updated_at", "2019-11-16 18:28:31.004671"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (123.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.4ms | Allocations: 80)
+  Rendered uploads/show.json.jbuilder (Duration: 1.1ms | Allocations: 264)
+Completed 201 Created in 146ms (Views: 3.0ms | ActiveRecord: 125.2ms | Allocations: 8557)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:30:47 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e723c4d7a8 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-1lfp3z6.png>, @original_filename="image (5).png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"image (5).png\"\r\nContent-Type: image/png\r\n">, "file"=>"new.pdf"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started POST "/login" for ::1 at 2019-11-16 19:30:50 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 129ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2130)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:30:59 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e723fe81d8 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-tmtpnb.png>, @original_filename="image (5).png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"image (5).png\"\r\nContent-Type: image/png\r\n">, "file"=>"new.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "new.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/new.pdf"], ["created_at", "2019-11-16 18:30:59.997934"], ["updated_at", "2019-11-16 18:30:59.997934"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (164.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 74)
+  Rendered uploads/show.json.jbuilder (Duration: 1.3ms | Allocations: 257)
+Completed 201 Created in 188ms (Views: 3.5ms | ActiveRecord: 165.5ms | Allocations: 7507)
+
+
+Started GET "/uploads/4.json" for ::1 at 2019-11-16 19:31:07 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"4"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/uploads/4.json" for ::1 at 2019-11-16 19:31:11 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/new.pdf (0.3ms)
+Completed 200 OK in 7ms (ActiveRecord: 0.7ms | Allocations: 3833)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:31:23 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e7242eba38 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-kqv528.png>, @original_filename="image (5).png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"image (5).png\"\r\nContent-Type: image/png\r\n">, "file"=>"new.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.4ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "new.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/new.png"], ["created_at", "2019-11-16 18:31:23.958627"], ["updated_at", "2019-11-16 18:31:23.958627"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (116.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 74)
+  Rendered uploads/show.json.jbuilder (Duration: 0.4ms | Allocations: 258)
+Completed 201 Created in 132ms (Views: 1.0ms | ActiveRecord: 117.6ms | Allocations: 7509)
+
+
+Started GET "/uploads/5.json" for ::1 at 2019-11-16 19:31:28 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/new.png (0.2ms)
+Completed 200 OK in 9ms (ActiveRecord: 0.7ms | Allocations: 3814)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:39:03 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x00007f40681f0c70 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-g6uj2j.pdf>, @original_filename="FrancescaMicallefCV_Updated.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"FrancescaMicallefCV_Updated.pdf\"\r\nContent-Type: application/pdf\r\n">, "file"=>"new.png"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.5ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "new.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/new.png"], ["created_at", "2019-11-16 18:39:03.929540"], ["updated_at", "2019-11-16 18:39:03.929540"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (178.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.2ms | Allocations: 74)
+  Rendered uploads/show.json.jbuilder (Duration: 0.6ms | Allocations: 257)
+Completed 201 Created in 195ms (Views: 1.2ms | ActiveRecord: 180.2ms | Allocations: 7533)
+
+
+Started GET "/uploads/6.json" for ::1 at 2019-11-16 19:39:10 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/new.png (0.2ms)
+Completed 200 OK in 19ms (ActiveRecord: 0.8ms | Allocations: 3839)
+
+
+Started POST "/uploads" for ::1 at 2019-11-16 19:39:18 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x000055e722423308 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-17748-1pkanfg.pdf>, @original_filename="FrancescaMicallefCV_Updated.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"FrancescaMicallefCV_Updated.pdf\"\r\nContent-Type: application/pdf\r\n">, "file"=>"new.pdf"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[36mUpload Create (0.4ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "new.pdf"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/new.pdf"], ["created_at", "2019-11-16 18:39:18.779749"], ["updated_at", "2019-11-16 18:39:18.779749"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  [1m[35m (150.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:33:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 0.3ms | Allocations: 74)
+  Rendered uploads/show.json.jbuilder (Duration: 0.9ms | Allocations: 257)
+Completed 201 Created in 171ms (Views: 1.7ms | ActiveRecord: 152.5ms | Allocations: 7513)
+
+
+Started GET "/uploads/7.json" for ::1 at 2019-11-16 19:39:24 +0100
+Processing by UploadsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/new.pdf (4.5ms)
+Completed 200 OK in 15ms (ActiveRecord: 0.8ms | Allocations: 3814)
+
+
+Started DELETE "/uploads/8" for ::1 at 2019-11-16 19:41:32 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"8"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started DELETE "/uploads/8" for ::1 at 2019-11-16 19:41:43 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 3445)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=8):
+  
+app/controllers/uploads_controller.rb:57:in `set_upload'
+Started DELETE "/uploads/7" for ::1 at 2019-11-16 19:41:54 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "5d5cf93d-5762-449c-9ba6-882fd91743db"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `set_upload'
+  [1m[36mUpload Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:53:in `upload_exists?'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:44:in `destroy'
+  [1m[36mUpload Destroy (0.4ms)[0m  [1m[31mDELETE FROM "uploads" WHERE "uploads"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/uploads_controller.rb:44:in `destroy'
+  [1m[35m (121.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:44:in `destroy'
+  Rendering uploads/destroy.json.jbuilder
+  Rendered uploads/destroy.json.jbuilder (Duration: 0.4ms | Allocations: 105)
+Completed 200 OK in 137ms (Views: 1.0ms | ActiveRecord: 122.6ms | Allocations: 6920)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (87.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191110151222)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110151222"]]
+  [1m[35m (90.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUploads (20191110154851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filename" varchar, "uri" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110154851"]]
+  [1m[35m (91.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserToUploads (20191110181943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "uploads" ADD "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_auploads_on_user_id" ON "auploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "uploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "uploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_15d41e668d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "uploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "auploads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "auploads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110181943"]]
+  [1m[35m (89.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJwtBlacklist (20191111232825)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "jwt_blacklist" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "jti" varchar NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_jwt_blacklist_on_jti" ON "jwt_blacklist" ("jti")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111232825"]]
+  [1m[35m (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-16 18:45:13.562097"], ["updated_at", "2019-11-16 18:45:13.562097"]]
+  [1m[35m (70.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for ::1 at 2019-11-16 19:45:31 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "testing3@gmail.com"], ["encrypted_password", "$2a$11$K08Ji.aiBHA0WYvlAdDO5O/nboouDhM6q97XSCq768USZznQgYVaO"], ["created_at", "2019-11-16 18:45:31.249906"], ["updated_at", "2019-11-16 18:45:31.249906"]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[35m (75.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+Completed 200 OK in 213ms (Views: 0.3ms | ActiveRecord: 76.8ms | Allocations: 9981)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (92.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (109.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191110151222)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110151222"]]
+  [1m[35m (110.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUploads (20191110154851)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "filename" varchar, "uri" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110154851"]]
+  [1m[35m (112.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserToUploads (20191110181943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "uploads" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "auploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_auploads_on_user_id" ON "auploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "auploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "uploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "uploads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" integer NOT NULL PRIMARY KEY, "filename" varchar DEFAULT NULL, "uri" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_15d41e668d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_uploads_on_user_id" ON "uploads" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "uploads" ("id","filename","uri","created_at","updated_at","user_id")
+                     SELECT "id","filename","uri","created_at","updated_at","user_id" FROM "auploads"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "auploads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191110181943"]]
+  [1m[35m (119.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJwtBlacklist (20191111232825)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "jwt_blacklist" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "jti" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_jwt_blacklist_on_jti" ON "jwt_blacklist" ("jti")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191111232825"]]
+  [1m[35m (119.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-16 18:46:31.711029"], ["updated_at", "2019-11-16 18:46:31.711029"]]
+  [1m[35m (80.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

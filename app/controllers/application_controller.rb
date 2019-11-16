@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::API
-   def load_user
-    User.find_for_database_authentication(email: sign_in_params[:email])
-  end
-
-  def render_resource(resource)
+   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
     else

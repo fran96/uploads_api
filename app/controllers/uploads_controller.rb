@@ -1,6 +1,7 @@
 class UploadsController < ApplicationController
   require 'base64'
   before_action :authenticate_user!
+  before_action :set_upload, only: [:show, :destroy]
 
   # GET /uploads
   # GET /uploads.json
@@ -12,7 +13,6 @@ class UploadsController < ApplicationController
   # GET /uploads/1.json
   def show
     if upload_exists?(params[:id])
-      @upload = Upload.find(params[:id])
       send_file @upload.uri
       `open #{@upload.uri}`
     else
@@ -41,7 +41,6 @@ class UploadsController < ApplicationController
   # DELETE /uploads/1.json
   def destroy
     if upload_exists?(params[:id])
-      @upload = Upload.find(params[:id])
       @upload.destroy
     else
       render :error
