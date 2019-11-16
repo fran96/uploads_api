@@ -18692,3 +18692,176 @@ Migrating to CreateJwtBlacklist (20191111232825)
   [1m[35m (80.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/doc/index.html" for ::1 at 2019-11-16 20:51:19 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/doc/index.html"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2019-11-16 20:51:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.5) lib/rack/cors.rb:98:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/login" for ::1 at 2019-11-16 21:02:18 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 2.1ms | Allocations: 2965)
+
+
+Started POST "/signup" for ::1 at 2019-11-16 21:02:21 +0100
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "testing3@gmail.com"], ["encrypted_password", "$2a$11$1VFOUtKsBQMzt1uIbWSwweprjn/P5Y2HXmO7KM/TYzCz1NV6KP6Ai"], ["created_at", "2019-11-16 20:02:21.819597"], ["updated_at", "2019-11-16 20:02:21.819597"]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+Completed 200 OK in 294ms (Views: 0.4ms | ActiveRecord: 126.2ms | Allocations: 10199)
+
+
+Started POST "/login" for ::1 at 2019-11-16 21:02:24 +0100
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"testing3@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "testing3@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2097)
+
+
+Started GET "/uploads/1" for ::1 at 2019-11-16 21:02:38 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "476e5fcc-2b4b-4c60-bc7b-0b859429c243"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.3ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:62:in `set_upload'
+Completed 404 Not Found in 12ms (ActiveRecord: 1.8ms | Allocations: 5059)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=1):
+  
+app/controllers/uploads_controller.rb:62:in `set_upload'
+Started POST "/uploads" for ::1 at 2019-11-16 21:02:52 +0100
+Processing by UploadsController#create as */*
+  Parameters: {"upload"=>{"binary"=>#<ActionDispatch::Http::UploadedFile:0x0000557e2c8b39b8 @tempfile=#<Tempfile:/tmp/RackMultipart20191116-32300-pmo5w1.png>, @original_filename="image (5).png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"upload[binary]\"; filename=\"image (5).png\"\r\nContent-Type: image/png\r\n">, "file"=>"neww.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "476e5fcc-2b4b-4c60-bc7b-0b859429c243"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:36:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:36:in `create'
+  [1m[36mUpload Create (0.3ms)[0m  [1m[32mINSERT INTO "uploads" ("filename", "uri", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["filename", "neww.png"], ["uri", "/home/fran/Documents/Repos/uploads_api/uploads/neww.png"], ["created_at", "2019-11-16 20:02:52.312550"], ["updated_at", "2019-11-16 20:02:52.312550"], ["user_id", 1]]
+  ↳ app/controllers/uploads_controller.rb:36:in `create'
+  [1m[35m (211.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:36:in `create'
+  Rendering uploads/show.json.jbuilder
+  Rendered uploads/_upload.json.jbuilder (Duration: 1.0ms | Allocations: 152)
+  Rendered uploads/show.json.jbuilder (Duration: 3.1ms | Allocations: 584)
+Completed 201 Created in 242ms (Views: 6.3ms | ActiveRecord: 212.2ms | Allocations: 15241)
+
+
+Started GET "/uploads/1" for ::1 at 2019-11-16 21:03:08 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "476e5fcc-2b4b-4c60-bc7b-0b859429c243"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:62:in `set_upload'
+  [1m[36mUpload Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `upload_exists?'
+Sent file /home/fran/Documents/Repos/uploads_api/uploads/neww.png (0.3ms)
+Completed 200 OK in 7ms (ActiveRecord: 0.6ms | Allocations: 3889)
+
+
+Started DELETE "/uploads/1" for ::1 at 2019-11-16 21:03:16 +0100
+Processing by UploadsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "476e5fcc-2b4b-4c60-bc7b-0b859429c243"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.2ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:62:in `set_upload'
+  [1m[36mUpload Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:57:in `upload_exists?'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/uploads_controller.rb:47:in `destroy'
+  [1m[36mUpload Destroy (0.2ms)[0m  [1m[31mDELETE FROM "uploads" WHERE "uploads"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/uploads_controller.rb:47:in `destroy'
+  [1m[35m (126.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/uploads_controller.rb:47:in `destroy'
+  Rendering uploads/destroy.json.jbuilder
+  Rendered uploads/destroy.json.jbuilder (Duration: 0.6ms | Allocations: 105)
+Completed 200 OK in 142ms (Views: 1.3ms | ActiveRecord: 127.5ms | Allocations: 6934)
+
+
+Started GET "/uploads/1" for ::1 at 2019-11-16 21:03:19 +0100
+Processing by UploadsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJWTBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = ? LIMIT ?[0m  [["jti", "476e5fcc-2b4b-4c60-bc7b-0b859429c243"], ["LIMIT", 1]]
+  [1m[36mUpload Load (0.1ms)[0m  [1m[34mSELECT "uploads".* FROM "uploads" WHERE "uploads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/uploads_controller.rb:62:in `set_upload'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 3446)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Upload with 'id'=1):
+  
+app/controllers/uploads_controller.rb:62:in `set_upload'

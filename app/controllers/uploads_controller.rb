@@ -1,3 +1,6 @@
+##
+# This class represents the upload api calls
+
 class UploadsController < ApplicationController
   require 'base64'
   before_action :authenticate_user!
@@ -49,15 +52,18 @@ class UploadsController < ApplicationController
 
   private
 
-  def upload_exists?(id)
+  # checks if current upload exists by its id
+  def upload_exists?(id) #:doc:
     Upload.exists?(id: id)
   end
 
-  def set_upload
+  # sets the current upload and is used before_action show and destroy
+  def set_upload #:doc:
     @upload = Upload.find(params[:id])
   end
 
-  def upload_params
+  # permits binary and file as parameters
+  def upload_params #:doc:
       params.require(:upload).permit(:binary, :file)
   end
 end

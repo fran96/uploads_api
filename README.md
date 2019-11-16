@@ -8,6 +8,12 @@ To get started run the below commands in the uploads_api directory:
 
 * bundle install
 * rails server
+* rdoc
+
+### RDOC
+
+* To view code documentation, navigate to uploads_api/doc/index.html and open it in the browser by right clicking on it and selecting open in browser. The doc folder should look similar to [this](docs/rdoc.jpg)
+* Navigate to the "Classes and Modules" to see further comments about specific methods.
 
 
 ### Examine DB contents
