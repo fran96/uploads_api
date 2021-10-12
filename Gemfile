@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.1'
 gem "devise"
 gem "devise-jwt", '~> 0.5.8'
 gem 'sqlite3', '~> 1.4'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'jbuilder', '~> 2.0'
 gem 'rack-cors'
 gem 'carrierwave'
